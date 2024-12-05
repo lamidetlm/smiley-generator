@@ -3,7 +3,7 @@ let state = {
     elaborate: 0,
     funny: 0,
     spicy: 0,
-    size: 'medium' // nouvelle variable pour la taille
+    size: 'M' // nouvelle variable pour la taille
 };
 
 // Tableau pour suivre l'ordre des smileys (peut contenir plusieurs fois le même type)
@@ -25,7 +25,7 @@ const emojis = {
 };
 
 // Configuration des tailles
-const sizes = ['small', 'medium', 'large'];
+const sizes = ['S', 'M', 'XL'];
 const sizeEmoji = '📐'; // Un seul emoji qui représente le redimensionnement
 
 // Fonction pour mettre à jour l'affichage des images
@@ -77,7 +77,7 @@ function cycleSize() {
     smileyDisplay.classList.add(`size-${state.size}`);
     
     const sizeBtn = document.getElementById('size-btn');
-    sizeBtn.textContent = `Size: ${state.size.charAt(0).toUpperCase() + state.size.slice(1)} ${sizeEmoji}`;
+    sizeBtn.textContent = `Size: ${state.size} ${sizeEmoji}`;
 }
 
 // Gestionnaire de clic pour les boutons
