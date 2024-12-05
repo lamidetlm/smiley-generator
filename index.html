@@ -9,19 +9,16 @@
 <body>
     <div class="app-container">
         <div class="smiley-generator">
-            <div class="emoji-panel">
-                <div class="emoji-display">
-                    <div id="selected-emojis"></div>
-                </div>
-                <button id="clear-btn" class="clear-button">🗑️</button>
-            </div>
-
             <div class="smiley-display">
                 <div id="image-stack">
                     <img id="origin" src="images/origine.png" alt="Image de base du smiley">
                     <img id="elaborate-layer" class="overlay" src="" alt="Couche élaborée" style="display: none;">
                     <img id="funny-layer" class="overlay" src="" alt="Couche amusante" style="display: none;">
                     <img id="spicy-layer" class="overlay" src="" alt="Couche épicée" style="display: none;">
+                </div>
+                <div class="emoji-overlay">
+                    <div id="selected-emojis"></div>
+                    <button id="clear-btn" class="clear-button">🗑️</button>
                 </div>
             </div>
 
