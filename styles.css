@@ -178,6 +178,10 @@ body {
     transform: scale(0.8);
 }
 
+.size-medium #image-stack {
+    transform: scale(1);
+}
+
 .size-large #image-stack {
     transform: scale(1.2);
 }
