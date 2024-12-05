@@ -19,7 +19,7 @@ const imagePaths = {
 
 // Emojis correspondants
 const emojis = {
-    elaborate: '🎨',
+    elaborate: '⚙️',
     funny: '😄',
     spicy: '🌶️'
 };

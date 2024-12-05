@@ -1,11 +1,11 @@
 :root {
-    --primary-color: #4CAF50;
-    --primary-hover: #45a049;
-    --secondary-color: #3f51b5;
-    --secondary-hover: #303f9f;
-    --danger-color: #ff4444;
-    --danger-hover: #ff0000;
-    --border-radius: 10px;
+    --primary-color: #df829e;
+    --primary-hover: #dc7795;
+    --secondary-color: #68c9e0;
+    --secondary-hover: #40b8d4;
+    --danger-color: #ff7979;
+    --danger-hover: #d85353;
+    --border-radius: 25px; /* Boutons plus ronds */
     --spacing-sm: 0.5rem;
     --spacing-md: 1rem;
     --spacing-lg: 1.5rem;
@@ -131,10 +131,27 @@ body {
     background-color: var(--primary-color);
     color: white;
     transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+/* Style pour les emojis dans les boutons */
+.control-btn span,
+.control-btn img {
+    font-size: 2em; /* 2 fois plus grand que le texte */
+}
+
+.button-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
 }
 
 .control-btn:hover {
     transform: translateY(-2px);
+    background-color: var(--primary-hover);
 }
 
 .size-btn {
