@@ -1,0 +1,185 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 15px;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+    gap: 0;
+    padding: 15px;
+}
+
+/* Conteneur pour l'image et la zone des emojis */
+.content-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: -30px; /* Pour permettre aux boutons de chevaucher */
+}
+
+.emoji-section {
+    position: absolute;
+    left: calc(50% - 280px);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.main-display {
+    width: 500px;
+    margin: 0 auto;
+}
+
+#image-stack {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%; /* Aspect ratio 1:1 */
+}
+
+#image-stack img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.emoji-selector {
+    width: 60px;
+    height: calc(3 * 2em + 2 * 8px + 30px); /* 3 emojis + gaps + padding */
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 15px 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+#selected-emojis {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+}
+
+.controls {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 0;
+    position: relative;
+    z-index: 2; /* Pour s'assurer que les boutons sont au-dessus de l'image */
+}
+
+button {
+    flex: 1;
+    padding: 12px;
+    font-size: 1em;
+    cursor: pointer;
+    border: none;
+    border-radius: 25px;
+    background-color: #4CAF50;
+    color: white;
+    transition: all 0.3s ease;
+    max-width: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.clear-button {
+    width: 100%;
+    padding: 8px;
+    font-size: 0.9em;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    background-color: #ff4444;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.clear-button:hover {
+    background-color: #ff0000;
+    transform: translateY(-2px);
+}
+
+.clear-button:active {
+    transform: translateY(0);
+}
+
+.emoji {
+    font-size: 2em;
+    line-height: 1;
+    margin: 5px 0;
+    animation: popIn 0.3s ease-out;
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Media Queries pour la responsivité */
+@media (max-width: 480px) {
+    .content-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .emoji-selector {
+        width: 100%;
+        max-width: 400px;
+        min-height: 80px;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    #selected-emojis {
+        flex-direction: row;
+    }
+
+    .controls {
+        padding: 5px;
+    }
+
+    button {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+
+    .emoji {
+        font-size: 1.8em;
+    }
+}

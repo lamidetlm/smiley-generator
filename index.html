@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Générateur de Smileys</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="content-wrapper">
+            <div class="emoji-section">
+                <div class="emoji-selector">
+                    <!-- Zone pour les emojis sélectionnés -->
+                    <div id="selected-emojis"></div>
+                </div>
+                <button id="clear-btn" class="clear-button">🗑️ Vider</button>
+            </div>
+            
+            <div class="main-display">
+                <div id="image-stack">
+                    <!-- Les images seront superposées ici -->
+                    <img id="origin" src="images/origine.png" alt="Image de base du smiley">
+                    <img id="elaborate-layer" class="overlay" src="" alt="Couche élaborée" style="display: none;">
+                    <img id="funny-layer" class="overlay" src="" alt="Couche amusante" style="display: none;">
+                    <img id="spicy-layer" class="overlay" src="" alt="Couche épicée" style="display: none;">
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="elaborate-btn">Elaborate 🎨</button>
+            <button id="funny-btn">Funny 😄</button>
+            <button id="spicy-btn">Spicy 🌶️</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
