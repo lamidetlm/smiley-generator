@@ -76,9 +76,9 @@ function cycleSize() {
     const nextIndex = (currentIndex + 1) % sizes.length;
     state.size = sizes[nextIndex];
     
-    const smileyDisplay = document.querySelector('.smiley-display');
-    smileyDisplay.classList.remove(...sizes.map(s => `size-${s}`));
-    smileyDisplay.classList.add(`size-${state.size}`);
+    const smileyContainer = document.getElementById('smiley-container');
+    smileyContainer.classList.remove(...sizes.map(s => `size-${s}`));
+    smileyContainer.classList.add(`size-${state.size}`);
     
     const sizeBtn = document.getElementById('size-btn');
     sizeBtn.textContent = `Size: ${state.size.charAt(0).toUpperCase() + state.size.slice(1)} ${sizeEmojis[state.size]}`;
