@@ -1,6 +1,8 @@
 :root {
     --primary-color: #4CAF50;
     --primary-hover: #45a049;
+    --secondary-color: #3f51b5;
+    --secondary-hover: #303f9f;
     --danger-color: #ff4444;
     --danger-hover: #ff0000;
     --border-radius: 10px;
@@ -41,9 +43,10 @@ body {
 /* Section de l'image et des emojis */
 .smiley-display {
     position: relative;
-    aspect-ratio: 1;
     width: 100%;
     max-width: 500px;
+    aspect-ratio: 1;
+    transition: all 0.3s ease;
 }
 
 #image-stack {
@@ -71,12 +74,12 @@ body {
     flex-direction: column;
     gap: var(--spacing-sm);
     align-items: center;
-    z-index: 10;
 }
 
 #selected-emojis {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: var(--spacing-sm);
     background-color: rgba(255, 255, 255, 0.9);
     padding: var(--spacing-sm);
@@ -92,33 +95,38 @@ body {
 
 /* Contrôles */
 .controls-panel {
-    display: flex;
-    gap: var(--spacing-sm);
-    justify-content: center;
-    flex-wrap: wrap;
     width: 100%;
     max-width: 500px;
+    padding: 0 var(--spacing-md);
 }
 
-.control-btn, .clear-button {
+.controls-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-sm);
+}
+
+.control-btn {
     padding: var(--spacing-md);
     border: none;
     border-radius: var(--border-radius);
     cursor: pointer;
     font-size: 1rem;
+    background-color: var(--primary-color);
+    color: white;
     transition: all 0.2s ease;
 }
 
-.control-btn {
-    background-color: var(--primary-color);
-    color: white;
-    flex: 1;
-    min-width: 120px;
+.control-btn:hover {
+    transform: translateY(-2px);
 }
 
-.control-btn:hover {
-    background-color: var(--primary-hover);
-    transform: translateY(-2px);
+.size-btn {
+    background-color: var(--secondary-color);
+}
+
+.size-btn:hover {
+    background-color: var(--secondary-hover);
 }
 
 .clear-button {
@@ -128,6 +136,10 @@ body {
     height: 40px;
     padding: var(--spacing-sm);
     font-size: 1.2rem;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all 0.2s ease;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -149,18 +161,19 @@ body {
     }
 }
 
+/* Tailles d'image */
+.smiley-display.size-small {
+    transform: scale(0.8);
+}
+
+.smiley-display.size-large {
+    transform: scale(1.2);
+}
+
 /* Responsive Design */
 @media (max-width: 767px) {
     .emoji-overlay {
         left: 3%;
-    }
-
-    .controls-panel {
-        padding: 0 var(--spacing-md);
-    }
-
-    .control-btn {
-        min-width: unset;
     }
 
     .emoji {
